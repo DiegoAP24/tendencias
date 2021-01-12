@@ -1,0 +1,510 @@
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url('fonts/flexslider-icon.eot');
+  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') 
+  format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
+}
+/* Fondo para los dos div*/
+.container{
+	overflow: hidden;
+}
+
+
+body {
+	background: #343233;
+	color: #ffffff;
+	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+	
+
+}
+header {
+	background: #584B4F;
+}
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+svg {
+	color: #DB3E40;
+	width: 35px;
+
+}
+
+ul {
+	list-style: none;
+}
+
+.container{
+	width: 90%;
+	margin:auto;
+}
+
+.nav-main {
+	/* Tamaño de las palabras del header*/
+	font-size: 13px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 140px;
+	padding: 20px 0;
+	font-weight: bold;
+}
+
+.nav-brand {
+	width: 231px;
+}
+
+/* Navegación */
+
+.nav-main ul{
+	display: flex;
+}
+
+.nav-main ul li{
+	padding: 23px;
+}
+
+/* Aplicar al segundo div el modo horizontal*/
+.item{
+	float: left;
+
+}
+/* Para el segundo div de las redes sociales*/
+.nav-rigth{
+	font-size: 14px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 140px;
+	padding: 20px 0;
+
+}
+/* Para separar los iconos de las redes sociales..*/
+.nav-rigth a{
+	padding: 2px;
+}
+
+.nav-main ul.nav-menu{
+	flex: 1;
+	margin-left: 50px;
+}
+
+.container .btn-menu{
+float: right;
+line-height: 70px;
+
+}
+.container .btn-menu label{
+
+font-size: 35px;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 140px;
+padding: 20px 0;
+}
+
+/* El espaciado del menú estático*/
+.nav-main ul li a:hover{
+	border-bottom: 2px solid #ffffff;
+}
+
+/* Menú Lateral */
+#btn-menu {
+	display: none;
+}
+.banner{
+	position: relative;
+}
+
+.container-menu{
+	position: absolute;
+	background: rgba(0,0,0,0.5);
+	width: 12%;
+	height: 249vh;
+	top: 0; left:88%;
+	transition: all 500ms ease;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 999;
+}
+
+#btn-menu:checked ~ .container-menu{
+	opacity:1;
+	visibility: visible;
+}
+
+.cont-menu{
+	width: 100%;
+	max-width: 250px;
+	background: #DB3E40;
+	height: 249vh;
+	position: relative;
+	transition: all 500ms ease;
+}
+
+.cont-menu nav{
+	transform: translateY(15%);
+}
+.cont-menu nav a{
+	display: block;
+	text-decoration: none;
+	padding: 20px;
+	color: #c7c7c7;
+	border-right: 5px solid transparent;
+}
+.cont-menu nav a:hover{
+	border-right: 5px solid #c7c7c7;
+	background: #1f1f1f;
+}
+.cont-menu label {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	cursor: pointer;
+	font-size:18px; 
+}
+
+
+/* Estilos Slider*/
+
+.slides img{
+	padding: 30px;
+
+}
+
+.flexslider{
+	position: relative;
+
+
+}
+
+.slides {
+	width: 100%;
+	overflow: hidden;
+
+}
+
+.flex-control-nav,
+.flex-direction-nav{
+	margin: 0;
+	padding: 0;
+}
+
+.flex-control-nav{
+	width: 100%;
+	text-align: center;
+}
+
+.flex-control-nav li {
+	display: inline-block;
+	margin: 0 6px;
+}
+
+.flex-control-nav li a{
+	display: block;
+	background: #ffffff;
+	width: 12px;
+	height: 12px;
+	border-radius: 12px;
+	text-indent: -9999px;
+}
+
+.flex-control-nav li a:hover{
+	background: #CB3234;
+}
+
+.flex-control-nav li a.flex-active{
+	background: #CB3234;
+}
+
+.flex-direction-nav a{
+	display: block;
+	text-decoration: none;
+	position: absolute;
+	top: 50%;
+	
+}
+
+.flex-direction-nav .flex-prev{
+	left: 8%;
+}
+
+.flex-direction-nav .flex-next{
+	right: 8%;
+}
+
+/* Sección Noticias - Slider*/
+
+
+.noticias {
+	
+
+	width: 35%;
+	margin: auto;
+	overflow: hidden;
+	/* Para el margen de la parte de arriba */
+	margin-top: 25px;
+	float: right;
+	margin-right: 200px;
+	border-radius: 15px;
+
+}
+
+.noticias ul {
+	display: flex;
+	padding: 0;
+	width:300%;
+	animation: cambio 12s infinite alternate;
+}
+
+.noticias ul:hover{
+	animation-play-state: paused;
+	cursor: pointer;
+}
+
+.noticias li{
+	width: 100%;
+}
+
+.noticias img{
+	width: 100%;
+	height: 400px;
+}
+
+@keyframes cambio{
+
+	0% {margin-left: 0%;}
+	30%{margin-left: 0%;}
+
+	35% {margin-left: -100%;}
+	70%{margin-left: -100%;}
+
+	75% {margin-left: -200%;}
+	100%{margin-left: -200%;}
+}
+
+/* Texto de las Noticias */
+
+.cont-noticias{
+	
+	overflow: hidden;
+}
+
+.texto{
+	padding: 50px;
+	float: left;
+
+}
+
+.texto {
+	margin-top: 20px;
+	margin-left: 270px;
+	width: 500px;
+}
+
+/* Botón de las Noticias */
+
+.cont-boton button {
+	margin-bottom: 40px;
+	border-radius: 34px;
+	width: 154px;
+	height: 37px;
+	background: #CB3234;
+	border:none;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+}
+
+/* Botón VER MAS */
+
+.cont-boton2 button {
+	margin-top: 40px;
+	width: 120px;
+	height: 37px;
+	background: #ffffff;
+	border-color: #000000
+	border:none;
+	color: #000000;
+	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+}
+/* Sección Eventos - Slider */
+
+.eventos {
+	
+
+	width: 35%;
+	margin: auto;
+	overflow: hidden;
+	/* Para el margen de la parte de arriba */
+	margin-top: 20px;
+	float: left;
+	margin-left: 200px;
+	border-radius: 15px;
+
+}
+
+.eventos ul {
+	display: flex;
+	padding: 0;
+	width:300%;
+	animation: cambio 12s infinite alternate;
+}
+
+.eventos ul:hover{
+	animation-play-state: paused;
+	cursor: pointer;
+}
+
+.eventos li{
+	width: 100%;
+}
+
+.eventos img{
+	width: 100%;
+	height: 400px;
+}
+
+@keyframes cambio{
+
+	0% {margin-left: 0%;}
+	30%{margin-left: 0%;}
+
+	35% {margin-left: -100%;}
+	70%{margin-left: -100%;}
+
+	75% {margin-left: -200%;}
+	100%{margin-left: -200%;}
+}
+
+/* Texto de los Eventos */
+
+.cont-eventos{
+	
+	overflow: hidden;
+}
+
+.txt-eventos{
+	padding: 50px;
+	float: right;
+
+}
+
+.txt-eventos {
+	margin-top: 20px;
+	margin-right: 250px;
+	width: 580px;
+}
+
+/* Barra de Logros*/
+
+#logros {
+	padding: 10px;
+	margin-top: 90px;
+	background:#DB3E40;
+	height: 280px;
+	
+}
+
+#logros img{
+	width: 125px;
+}
+
+figure {
+	
+	display: inline-block;
+	position: relative;
+	padding: 87px;
+	margin-bottom: 20px;
+}
+
+figcaption {
+	margin-top: 10px;
+	position: absolute;
+	width: 82%;
+
+
+}
+
+#titulo{
+	margin-left: 100px;
+	font-size: 20px;
+	margin-bottom: -40px;
+
+}
+
+#btns {
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 500px;
+	margin-right: 500px;
+
+
+}
+
+/* Footer UNS */
+
+footer {
+
+	background: #2C2A2B;
+	margin-top: 50px;
+	
+	
+}
+
+.titulo-footer {
+	text-align: center;
+	margin-top: -45px;
+	margin-bottom: 50px;
+	font-size: 25;
+	padding: 40px;
+}
+
+.uns-footer img{
+	width: 38px;
+	margin-left: 700px;
+	margin-top: -128px;
+}
+
+/* Redes Sociales del Footer*/
+.nav-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 120px;
+	padding: 2px;
+	margin-left: 870px;
+	margin-right: 870px;
+	margin-top: -125px;
+	margin-bottom: -35px;
+
+}
+
+.nav-footer svg {
+	color: #ffffff;
+}
+
+.foot{
+	font-size: 18px;
+	padding-bottom: 20px;
+
+
+}
